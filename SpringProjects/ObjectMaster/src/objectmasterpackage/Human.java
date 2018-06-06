@@ -8,20 +8,31 @@ public class Human {
 	protected int health;
 	
 	public Human() {
-		this.strength = 3;
-		this.stealth = 3;
-		this.intelligence = 3;
-		this.health = 100;
+		strength = 3;
+		stealth = 3;
+		intelligence = 3;
+		health = 100;
 	}
 	
 	public Human attack(Human victim) {
 		victim.reduceHealth(strength);
+		System.out.println("Attack!");
 		return this;
 	}
 	
 	public void reduceHealth(int damage) {
 		health -= damage;
-		System.out.println("Attack!");
+		return;
+	}
+	
+	public void increaseHealth(int life) {
+		health += life;
+		return;
+	}
+	
+	public void die() {
+		health = 0;
+		System.out.println("Death becomes you, puny mortal.");
 		return;
 	}
 	
